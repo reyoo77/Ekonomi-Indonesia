@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekonomi Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">Ekonomi Indonesia</h1>
+    <select id="language-switcher">
+      <option value="id">Bahasa Indonesia</option>
+      <option value="en">English</option>
+    </select>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2 data-id="intro-title">Selamat Datang</h2>
+      <p data-id="intro-text">Situs ini membahas perkembangan dan isu-isu terkini seputar perekonomian di Indonesia.</p>
+    </section>
+
+    <section id="content">
+      <h2 data-id="economy-title">Kondisi Ekonomi Terkini</h2>
+      <p data-id="economy-text">Pertumbuhan ekonomi Indonesia pada kuartal terakhir menunjukkan peningkatan, didorong oleh sektor konsumsi dan ekspor.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ekonomi Indonesia</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "title": "Indonesia's Economy",
+        "intro-title": "Welcome",
+        "intro-text": "This site discusses the latest developments and issues regarding Indonesia's economy.",
+        "economy-title": "Current Economic Conditions",
+        "economy-text": "Indonesia's economic growth in the last quarter shows an increase, driven by the consumption and export sectors."
+      },
+      id: {
+        "title": "Ekonomi Indonesia",
+        "intro-title": "Selamat Datang",
+        "intro-text": "Situs ini membahas perkembangan dan isu-isu terkini seputar perekonomian di Indonesia.",
+        "economy-title": "Kondisi Ekonomi Terkini",
+        "economy-text": "Pertumbuhan ekonomi Indonesia pada kuartal terakhir menunjukkan peningkatan, didorong oleh sektor konsumsi dan ekspor."
+      }
+    };
+
+    const langSwitcher = document.getElementById('language-switcher');
+    langSwitcher.addEventListener('change', (e) => {
+      const lang = e.target.value;
+      document.getElementById('title').textContent = translations[lang]['title'];
+      document.querySelector('[data-id="intro-title"]').textContent = translations[lang]['intro-title'];
+      document.querySelector('[data-id="intro-text"]').textContent = translations[lang]['intro-text'];
+      document.querySelector('[data-id="economy-title"]').textContent = translations[lang]['economy-title'];
+      document.querySelector('[data-id="economy-text"]').textContent = translations[lang]['economy-text'];
+    });
+  </script>
+</body>
+</html>
